@@ -1,0 +1,20 @@
+....
+
+    #gzip  on;
+
+    server {
+        listen       80;
+        server_name  localhost;
+
+        #charset koi8-r;
+
+...
+
+        location / {
+		rewrite ^(.*)$ /$1.php;
+		}
+		location = / {
+		rewrite ^ /index.php;
+		}
+
+...
